@@ -1,5 +1,5 @@
 [build]
-command = "node app.js"
+command = "node App.js"
 publish = "/" # O diretório onde o seu código do servidor Node.js está
 base = "/"  # Diretório raiz do seu projeto
 [build.environment]
