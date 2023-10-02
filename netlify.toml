@@ -1,0 +1,23 @@
+[build]
+command = "node app.js"
+publish = "app.js" # O diretório onde o seu código do servidor Node.js está
+base = "app.js"  # Diretório raiz do seu projeto
+[build.environment]
+# Defina as variáveis de ambiente aqui (não inclua senhas ou chaves secretas diretamente no arquivo)
+# O Netlify permite configurar variáveis de ambiente em seu painel de controle.
+NODE_VERSION = "14" # Versão do Node.js
+STREAMTAPE_USER = "e9399cca09629f1f4f3d"
+STREAMTAPE_KEY = "XPgDDg9l99fD4Xd"
+
+[dev]
+command = "node app.js" # Comando para iniciar o servidor localmente durante o desenvolvimento
+
+[[redirects]]
+from = "/app.js/*"
+to = "/app.js/:splat"
+status = 200
+
+[[redirects]]
+from = "/.well-known/*"
+to = "/.well-known/:splat"
+status = 200
