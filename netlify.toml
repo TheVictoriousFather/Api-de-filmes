@@ -1,6 +1,6 @@
 [build]
-command = ""
-publish = "" # O diretório onde o seu código do servidor Node.js está
+command = "node App.js"
+publish = "/" # O diretório onde o seu código do servidor Node.js está
 
 [build.environment]
 # Defina as variáveis de ambiente aqui (não inclua senhas ou chaves secretas diretamente no arquivo)
