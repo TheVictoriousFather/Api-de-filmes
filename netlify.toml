@@ -10,7 +10,7 @@ STREAMTAPE_USER = "e9399cca09629f1f4f3d"
 STREAMTAPE_KEY = "XPgDDg9l99fD4Xd"
 
 [dev]
-command = "node app.js" # Comando para iniciar o servidor localmente durante o desenvolvimento
+command = "node App.js" # Comando para iniciar o servidor localmente durante o desenvolvimento
 
 [[redirects]]
 from = "/App.js/*"
