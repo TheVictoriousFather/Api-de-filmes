@@ -1,7 +1,7 @@
 [build]
 command = ""
 publish = "" # O diretório onde o seu código do servidor Node.js está
-base = "/"  # Diretório raiz do seu projeto
+
 [build.environment]
 # Defina as variáveis de ambiente aqui (não inclua senhas ou chaves secretas diretamente no arquivo)
 # O Netlify permite configurar variáveis de ambiente em seu painel de controle.
