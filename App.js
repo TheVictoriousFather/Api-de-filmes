@@ -37,7 +37,7 @@ app.get('/movies', async (req, res) => {
 // Rota para acessar a lista de séries
 app.get('/series', async (req, res) => {
   try {
-    const data = await obterDados('series-folder-id'); // Substitua 'series-folder-id' pelo ID da pasta de séries
+    const data = await obterDados('UsY8ZNeSecM'); // Substitua 'series-folder-id' pelo ID da pasta de séries
     const seriesList = data.files.map((series) => ({
       name: series.name,
       linkid: series.linkid,
@@ -52,7 +52,7 @@ app.get('/series', async (req, res) => {
 app.get('/:type/:videoName', async (req, res) => {
   try {
     const { type, videoName } = req.params;
-    const folderId = type === 'movies' ? 'YEDzEb--eDg' : 'series-folder-id'; // Substitua 'series-folder-id' pelo ID da pasta de séries
+    const folderId = type === 'movies' ? 'b901TtK4ROU' : 'UsY8ZNeSecM'; // Substitua 'series-folder-id' pelo ID da pasta de séries
     const data = await obterDados(folderId);
     const video = data.files.find((video) => video.name === videoName);
 
