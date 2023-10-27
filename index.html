@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Seleção de Opções</title>
+</head>
+<body>
+  <h1>Escolha a opção desejada:</h1>
+  <form id="optionForm">
+    <input type="radio" name="option" value="dublado"> Dublado
+    <input type="radio" name="option" value="legendado"> Legendado
+    <input type="submit" value="Selecionar">
+  </form>
+
+  <script>
+    const form = document.getElementById("optionForm");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const selectedOption = document.querySelector('input[name="option"]:checked');
+
+      if (selectedOption) {
+        const optionValue = selectedOption.value;
+        let movieName; // Substitua com o nome do filme selecionado
+        let redirectURL;
+
+        if (optionValue === "dublado") {
+          redirectURL = `/movies/dublado/${movieName}`;
+        } else if (optionValue === "legendado") {
+          redirectURL = `/movies/legendado/${movieName}`;
+        }
+
+        if (redirectURL) {
+          window.location.href = redirectURL;
+        }
+      } else {
+        alert("Por favor, selecione uma opção.");
+      }
+    });
+  </script>
+</body>
+</html>
