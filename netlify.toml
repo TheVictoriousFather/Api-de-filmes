@@ -1,3 +1,4 @@
+
 [build]
 command = "node app.js"
 publish = "app.js" # O diretório onde o seu código do servidor Node.js está
@@ -8,6 +9,10 @@ base = "app.js"  # Diretório raiz do seu projeto
 NODE_VERSION = "14" # Versão do Node.js
 STREAMTAPE_USER = "e9399cca09629f1f4f3d"
 STREAMTAPE_KEY = "XPgDDg9l99fD4Xd"
+EMAIL=vgtvprime@gmail.com
+EMAIL_KEY=goha umwl owgw qrom
+HOST=smtp.gmail.com
+PORT=587
 
 [dev]
 command = "node app.js" # Comando para iniciar o servidor localmente durante o desenvolvimento
@@ -21,3 +26,5 @@ status = 200
 from = "/.well-known/*"
 to = "/.well-known/:splat"
 status = 200
+
+

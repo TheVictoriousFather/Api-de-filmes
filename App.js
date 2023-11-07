@@ -4,6 +4,7 @@ const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
 const app = express();
+
 const SMTP_CONFIG = require("./smtp");
 const bodyParser = require("body-parser");
 const emailRouter = express.Router();
@@ -86,6 +87,10 @@ app.post('/send', (req, res) => {
 
 
 
+
+
+
+
 // Função para obter os dados da URL
 async function obterDados(folder) {
   try {
@@ -97,6 +102,7 @@ async function obterDados(folder) {
     throw error;
   }
 }
+
 
 
 // Configure o transporte de e-mail (substitua com suas próprias credenciais)
@@ -266,4 +272,8 @@ app.get('/:language/:type/:videoName', async (req, res) => {
 
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
+
 });
+
+
+
