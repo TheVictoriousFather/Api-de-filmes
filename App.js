@@ -21,31 +21,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); // Para JSON
 app.get('/',(req, res)=>res.send('ola vitor'))
 
-// app.get('/send',(req,res)=>{
-
-//   const transporter = nodemailer.createTransport({
-//   host: SMTP_CONFIG.host,
-//   port: SMTP_CONFIG.port,
-//   secure: false,
-//   auth: {
-//     user: SMTP_CONFIG.user,
-//     pass: SMTP_CONFIG.pass,
-//   },
-//   tls: {
-//     rejectUnauthorized: false,
-//   },
-// }); 
-// transporter.sendMail({
-//   from:user,
-//   to:SMTP_CONFIG.user,
-//   subject:"teste",
-//   text:"ola vitor",
-//   replyTo:"victoriousbusines@gmail.com"
- 
-// }).then(info=>{res.send(info)
-// }).catch(error =>{
-//   res.send(error)
-// })})
 
 
 
@@ -55,7 +30,7 @@ app.post('/send', (req, res) => {
   const transporter = nodemailer.createTransport({
     host: SMTP_CONFIG.host,
     port: SMTP_CONFIG.port,
-      secure: true,
+    secure: false,
     auth: {
       user: SMTP_CONFIG.user,
       pass: SMTP_CONFIG.pass,
