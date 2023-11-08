@@ -6,13 +6,13 @@ const cors = require('cors');
 const app = express();
 
 const SMTP_CONFIG = require("./smtp");
-const bodyParser = require("body-parser");
+//const bodyParser = require("body-parser");
 const emailRouter = express.Router();
 const nodemailer = require("nodemailer");
 const port = 3000;
 const user = process.env.STREAMTAPE_USER;
 emailRouter.use(cors());
-emailRouter.use(bodyParser.json());
+emailRouter.use(express.json());
 const key = process.env.STREAMTAPE_KEY;
 
 app.use(cors());
