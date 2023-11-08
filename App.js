@@ -5,58 +5,58 @@ const axios = require('axios');
 const cors = require('cors');
 const app = express();
 
-const SMTP_CONFIG = require("./smtp");
-const bodyParser = require("body-parser");
-const emailRouter = express.Router();
-const nodemailer = require("nodemailer");
+// const SMTP_CONFIG = require("./smtp");
+// const bodyParser = require("body-parser");
+// const emailRouter = express.Router();
+// const nodemailer = require("nodemailer");
 const port = 3000;
 const user = process.env.STREAMTAPE_USER;
-emailRouter.use(cors());
-emailRouter.use(bodyParser.json());
+// emailRouter.use(cors());
+// emailRouter.use(bodyParser.json());
 const key = process.env.STREAMTAPE_KEY;
 
 app.use(cors());
 // Montando o servidor de e-mails em uma rota específica
-app.use(express.urlencoded({ extended: true }));
+// app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); // Para JSON
 app.get('/',(req, res)=>res.send('ola vitor'))
 
 
 
 
-app.post('/send', (req, res) => {
-  const { emailData} = req.body; // Captura os dados do formulário
+// app.post('/send', (req, res) => {
+//   const { emailData} = req.body; // Captura os dados do formulário
 
-  const transporter = nodemailer.createTransport({
-    host: SMTP_CONFIG.host,
-    port: SMTP_CONFIG.port,
-    secure: true,
-    auth: {
-      user: SMTP_CONFIG.user,
-      pass: SMTP_CONFIG.pass,
-    },
-    tls: {
-      rejectUnauthorized: false,
-    },});
+//   const transporter = nodemailer.createTransport({
+//     host: SMTP_CONFIG.host,
+//     port: SMTP_CONFIG.port,
+//     secure: false,
+//     auth: {
+//       user: SMTP_CONFIG.user,
+//       pass: SMTP_CONFIG.pass,
+//     },
+//     tls: {
+//       rejectUnauthorized: false,
+//     },});
 
-    const mailOptions = {
-      from: SMTP_CONFIG.user,
-      to: emailData.to,
-      subject: emailData.subject,
-      html: emailData.message,
-      replyTo: emailData.email,
-    };
+//     const mailOptions = {
+//       from: SMTP_CONFIG.user,
+//       to: emailData.to,
+//       subject: emailData.subject,
+//       html: emailData.message,
+//       replyTo: emailData.email,
+//     };
   
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.error("Erro ao enviar o e-mail:", error);
-        res.status(500).send(error);
-      } else {
-        console.log("E-mail enviado com sucesso:", info.response);
-        res.send("E-mail enviado com sucesso!");
-      }
-    });
-  });
+//     transporter.sendMail(mailOptions, (error, info) => {
+//       if (error) {
+//         console.error("Erro ao enviar o e-mail:", error);
+//         res.status(500).send(error);
+//       } else {
+//         console.log("E-mail enviado com sucesso:", info.response);
+//         res.send("E-mail enviado com sucesso!");
+//       }
+//     });
+//   });
 
 
 
