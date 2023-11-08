@@ -30,7 +30,7 @@ app.post('/send', (req, res) => {
   const transporter = nodemailer.createTransport({
     host: SMTP_CONFIG.host,
     port: SMTP_CONFIG.port,
-    secure: false,
+    secure: true,
     auth: {
       user: SMTP_CONFIG.user,
       pass: SMTP_CONFIG.pass,
